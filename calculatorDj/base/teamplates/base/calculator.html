@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<title>Django Calculator</title>
+<body>
+    <section class="calculator">
+        <h1>Django Calculator App</h1>
+
+        <form action=" { % url 'calculate' %}" method="POST">
+            {% csrf_token %}
+
+
+            <label for="Number One">First Number</label>
+            <input type="number" placeholder="First Number" name="number_one">
+
+            <label for="Number One">Second Number</label>
+            <input type="number" placeholder="Second Number" name="number_two">
+
+            <label for="Operation">Operation</label>
+            <select name="operation" id="">
+                <option value="add">Add</option>
+                <option value="add">Substract</option>
+                <option value="add">Multiply</option>
+                <option value="add">Divide</option>
+            </select>
+
+            <input type="submit" value="Calculate" id="calc_btn" class="btn">
+            
+            <h3>The result is: {{ result }}</h3>
+
+        </form>
+
+    </section>
+    
+</body>
+</html>
